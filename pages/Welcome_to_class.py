@@ -1,6 +1,5 @@
 import streamlit as st
 import time
-import datetime
 import functions
 
 
@@ -15,25 +14,26 @@ st.markdown("<style> ul {display: none;} </style>", unsafe_allow_html=True)
 
 
 #put lottie jsonn file into variable to be loaded into streamlit    
-w_iconlottie = functions.load_lottiefile("lottie_files/w_icon.json")
+w_icon = functions.load_lottiefile("lottie_files/w_icon.json")
+hero_icon = functions.load_lottiefile("lottie_files/hero_icon.json")
 
 #parameter for lottie w_icon animation file
-st_lottie(w_iconlottie, 
+st_lottie(w_icon, 
           key="w_icon",
           height= 256,
           width = 256)
 
-st.title("You are registerd. Please take a Photo.")
+st.title("Please take your little hero to class.")
 
+#parameter for lottie w_icon animation file
+st_lottie(hero_icon, 
+          key="hero_icon",
+          height= 256,
+          width = 256)
 
-parent_picture = st.camera_input(label=" ", key="Parent_picture")
+if functions.countdown(0,0,3):
+    switch_page("main")
 
-if parent_picture:
-    if st.button("Great Selfie - Click this button to proceed to class or click clear photo above to take again"):
-        switch_page("Welcome_to_class")
-
-
-
-
-    st.session_state
+print(functions.countdown(0,0,3))
+st.session_state
 

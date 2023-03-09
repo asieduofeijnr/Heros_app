@@ -10,7 +10,7 @@ from streamlit_lottie import st_lottie_spinner
 
 
 #hide the sidebar including all items in it
-st.set_page_config(initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Little Heros", page_icon=":baby:",layout="centered", initial_sidebar_state="collapsed")
 st.markdown("<style> ul {display: none;} </style>", unsafe_allow_html=True)
 
 
@@ -41,7 +41,7 @@ with st.container():
 
 add_vertical_space(2)
 
-
+#placeholders in variables
 the_parent_firstname = st.session_state["Parent_firstname"]
 the_parent_lastname = st.session_state["Parent_lastname"]
 the_child_firstname = st.session_state["Child_firstname"]
@@ -51,8 +51,9 @@ the_password = st.session_state["Password"]
 the_phone_number = st.session_state["Phone_number"]
 
 
-if st.button("Take a Photo"):
-    #Validation for email
+if st.button("Proceed and take a Photo"):
+    #Validation for placeholders// remember to uncomment and indent switch page correctly
+    '''
     if the_parent_firstname == "":
         st.error("Please insert your last name")
     if the_parent_lastname == "":
@@ -68,7 +69,8 @@ if st.button("Take a Photo"):
     if functions.validate_password(the_phone_number) or the_phone_number == "":
         st.error("Please insert a Valid Phone Number:")       
     else:
-        switch_page("Take a photo")
+    '''
+    switch_page("Take_a_photo")
 
 
 st.session_state
