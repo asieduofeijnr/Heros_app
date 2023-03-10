@@ -10,7 +10,7 @@ from streamlit_lottie import st_lottie_spinner
 
 #Page setting and hidinng the sidebar including all items in it
 st.set_page_config(page_title="Little Heros", page_icon=":baby:",layout="centered", initial_sidebar_state="collapsed")
-st.markdown("<style> ul {display: none;} </style>", unsafe_allow_html=True)
+#st.markdown("<style> ul {display: none;} </style>", unsafe_allow_html=True)
 
 
 #put lottie jsonn file into variable to be loaded into streamlit    
