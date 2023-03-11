@@ -3,6 +3,7 @@ import json
 import time
 import datetime
 import smtplib, ssl
+import os
 
 
 # Making a regular expression to validate an Email
@@ -68,7 +69,8 @@ def send_email(message):
     port = 465
 
     username = "adwintechnology@gmail.com"
-    password = "daiaodqtddanbhtb"
+    #please create your own gmail username and password to access email function
+    password = os.getenv("PASSWORD")
 
     receiver = "adwintechnology@gmail.com"
     context = ssl.create_default_context()
@@ -76,3 +78,7 @@ def send_email(message):
     with smtplib.SMTP_SSL(host, port, context=context) as server:
         server.login(username, password)
         server.sendmail(username, receiver, message)
+
+
+
+    
