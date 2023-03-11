@@ -2,6 +2,7 @@ import re as r
 import json
 import time
 import datetime
+import smtplib, ssl
 
 
 # Making a regular expression to validate an Email
@@ -60,3 +61,18 @@ def countdown(h, m, s):
         # Reduces total time by one second
         total_seconds -= 1
     return True
+
+
+def send_email(message):
+    host = "smtp.gmail.com"
+    port = 465
+
+    username = "adwintechnology@gmail.com"
+    password = "daiaodqtddanbhtb"
+
+    receiver = "adwintechnology@gmail.com"
+    context = ssl.create_default_context()
+
+    with smtplib.SMTP_SSL(host, port, context=context) as server:
+        server.login(username, password)
+        server.sendmail(username, receiver, message)
