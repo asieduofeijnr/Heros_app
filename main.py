@@ -30,8 +30,6 @@ st.title("Welcome to Little Heros :wave:")
 
 
 
-
-
 with st.form(key="email_form"):
     with st.container():
     #Take parents details
